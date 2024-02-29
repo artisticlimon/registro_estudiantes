@@ -124,23 +124,21 @@ class RegistroEstudiantes:
 
     def imprimir_notas(self, estudiante):
     # Despliega el reporte de calificaciones de un estudiante  
-        indice_porcentaje = 0
+        print(estudiante.porcentajes)
         for i in range(8):
             if 0<=i<3:
                 print(f'Nota tarea {i+1}: {estudiante.notas[i]}')
             elif i == 3:
                 print(f'Nota tarea {i+1}: {estudiante.notas[i]}')
-                print(f'PORCENTAJE OBTENIDO DE TAREAS: {estudiante.porcentajes[indice_porcentaje]}')
-                indice_porcentaje += 1
+                print(f'PORCENTAJE OBTENIDO DE TAREAS: {sum(estudiante.porcentajes[:4])}')
             elif 4<= i < 6:
                 print(f'Nota examen parcial {i+1}: {estudiante.notas[i]}')
             elif i == 6:
                 print(f'Nota examen parcial {i+1}: {estudiante.notas[i]}')
-                print(f'PORCENTAJE OBTENIDO DE LOS EXAMENES PACIALES: {estudiante.porcentajes[indice_porcentaje]}')
-                indice_porcentaje += 1    
+                print(f'PORCENTAJE OBTENIDO DE LOS EXAMENES PACIALES: {estudiante.porcentajes[4]}')   
             else:
                 print(f'Nota examen final: {estudiante.notas[i]}')
-                print(f'PORCENTAJE OBTENIDO DEL EXAMEN FINAL: {estudiante.porcentajes[indice_porcentaje]}')  
+                print(f'PORCENTAJE OBTENIDO DEL EXAMEN FINAL: {estudiante.porcentajes[5]}')
         print('***************************')
         print(f'NOTA FINAL = {round(estudiante.nota_final, 2)}')
         print(f'ESTADO: {estudiante.estado}')
