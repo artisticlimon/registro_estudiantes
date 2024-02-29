@@ -124,7 +124,6 @@ class RegistroEstudiantes:
 
     def imprimir_notas(self, estudiante):
     # Despliega el reporte de calificaciones de un estudiante  
-        print(estudiante.porcentajes)
         for i in range(8):
             if 0<=i<3:
                 print(f'Nota tarea {i+1}: {estudiante.notas[i]}')
@@ -176,6 +175,7 @@ class RegistroEstudiantes:
             # Lo que significa cada opcion
             if desea_mostrar_reporte == '1':
                 # Pide desplegar el reporte del estudiante
+                print(f"{estudiante.nombre} {estudiante.apellido} id: {estudiante.id}")
                 self.visualizar_un_reporte(estudiante)
                 break
             if desea_mostrar_reporte == '2':
