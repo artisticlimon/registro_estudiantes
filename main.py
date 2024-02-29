@@ -1,4 +1,3 @@
-import os
 from registro_de_estudiantes import RegistroEstudiantes 
 
 # Lista de los id's ya utilizados para que no haya id's repetidos
